@@ -5,7 +5,7 @@
     "height": 400,
     "projection": {"type": "equalEarth"},
     "data": {
-      "url": "https://github.com/ZhuojiaWu/3179/blob/main/A2/w9-js/output.json",
+      "url": "https://raw.githubusercontent.com/ZhuojiaWu/3179/main/A2/w9-js/output.json",
       "format": {"type": "topojson", "feature": "STE_2021_AUST_GDA2020"}
     },
     "transform": [
@@ -13,16 +13,16 @@
         "lookup": "properties.STE_NAME21",
         "from": {
           "data": {
-            "url": "https://github.com/ZhuojiaWu/3179/blob/main/A2/Data/Short-term%20resident%20returns%2C%20state%2019-23.csv" 
+            "url": "https://raw.githubusercontent.com/ZhuojiaWu/3179/main/A2/Data/Short-term%20resident%20returns%2C%20state%2019-23.csv" 
           },
-          "key": "State or territory",
-          "fields": ["Jul 2019","Jul 2021","Jul 2022","Jul 2023"]
+          "key": "Stateorterritory",
+          "fields": ["Jul2019","Jul2021","Jul2022","Jul2023"]
         }
       },
-        {
-          "calculate": "datum.Jul 2023+datum.Jul 2022+datum.Jul 2021+datum.Jul 2019",
-          "as": "Total"
+        { "calculate": "datum.Jul2023+datum.Jul2022+datum.Jul2021+datum.Jul2019",
+           "as": "Total"
         }
+        
       
     ],
     "mark": {"type": "geoshape"},
@@ -30,7 +30,8 @@
       "color": {
         "field": "Total",
         "type": "quantitative",
-        "scale": {"type": "threshold"}
+        "scale": {"type": "log"},
+        "title": "Number of residents return"
       },
       "tooltip": [
         {"field": "properties.STE_NAME21", "type": "nominal", "title": "states"},
