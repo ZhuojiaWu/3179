@@ -15,7 +15,8 @@
           "data": {
             "url": "https://github.com/ZhuojiaWu/3179/blob/main/A2/Data/Short-term%20resident%20returns%2C%20state%2019-23.csv" 
           },
-          "key": "State or territory"
+          "key": "State or territory",
+            "fields": ["Jul 2019","Jul 2021","Jul 2022","Jul 2023"]
         }
       },
         {
