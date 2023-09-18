@@ -16,11 +16,11 @@
             "url": "https://github.com/ZhuojiaWu/3179/blob/main/A2/Data/Short-term%20resident%20returns%2C%20state%2019-23.csv" 
           },
           "key": "State or territory",
-            "fields": ["Jul 2019","Jul 2021","Jul 2022","Jul 2023"]
+          "fields": ["Jul 2019","Jul 2021","Jul 2022","Jul 2023"]
         }
       },
         {
-          "calculate": "datum['Jul 2019'] + datum['Jul 2021'] + datum['Jul 2022'] + datum['Jul 2023']",
+          "calculate": "datum.Jul 2023+datum.Jul 2022+datum.Jul 2021+datum.Jul 2019",
           "as": "Total"
         }
       
@@ -30,7 +30,7 @@
       "color": {
         "field": "Total",
         "type": "quantitative",
-        "scale": {"type": "log"}
+        "scale": {"type": "threshold"}
       },
       "tooltip": [
         {"field": "properties.STE_NAME21", "type": "nominal", "title": "states"},
