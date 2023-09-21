@@ -15,26 +15,22 @@
           "data": {
             "url": "https://raw.githubusercontent.com/ZhuojiaWu/3179/main/A2/Data/Short-term%20resident%20returns%2C%20state%2019-23.csv" 
           },
-          "key": "Stateorterritory",
-          "fields": ["Jul2019","Jul2021","Jul2022","Jul2023"]
+          "key": "StateorTerritory",
+          "fields": ["Total"]
         }
-      },
-        { "calculate": "datum.Jul2023+datum.Jul2022+datum.Jul2021+datum.Jul2019",
-           "as": "Total"
-        }
-        
+      }
       
     ],
-    "mark": {"type": "geoshape"},
+    "mark": {"type": "geoshape",  "stroke": "gray", "strokeWidth": 1},
+
     "encoding": {
       "color": {
         "field": "Total",
         "type": "quantitative",
-        "scale": {"type": "log"},
         "title": "Number of residents return"
       },
       "tooltip": [
-        {"field": "properties.STE_NAME21", "type": "nominal", "title": "states"},
+        {"field": "properties.STE_NAME21", "type": "nominal", "title": "state"},
         {"field": "Total", "type": "quantitative"}
       ]
     }
